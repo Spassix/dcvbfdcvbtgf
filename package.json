@@ -1,0 +1,34 @@
+{
+  "name": "plug-certifie",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "boutique",
+    "admin",
+    "backend",
+    "shared"
+  ],
+  "scripts": {
+    "postinstall": "npm run build:shared",
+    "build:shared": "cd shared && npm run build",
+    "dev": "npm run build:shared && concurrently \"npm run dev:boutique\" \"npm run dev:admin\" \"npm run dev:backend\"",
+    "dev:boutique": "cd boutique && npm run dev",
+    "dev:admin": "cd admin && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "npm run build:shared && npm run build:boutique && npm run build:admin && npm run build:backend",
+    "build:boutique": "cd boutique && npm run build",
+    "build:admin": "cd admin && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "preview": "cd boutique && npm run preview",
+    "start": "cd backend && npm start",
+    "type-check": "npm run type-check:boutique && npm run type-check:admin && npm run type-check:backend",
+    "type-check:boutique": "cd boutique && tsc --noEmit",
+    "type-check:admin": "cd admin && tsc --noEmit",
+    "type-check:backend": "cd backend && tsc --noEmit"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  }
+}
+
