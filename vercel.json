@@ -12,20 +12,14 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/index"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.ts"
     },
     {
-      "src": "/admin/(.*)",
-      "dest": "/admin/index.html"
+      "source": "/admin/(.*)",
+      "destination": "/admin/index.html"
     },
     {
-      "src": "/(.*)",
-      "dest": "/boutique/index.html"
+      "source": "/(.*)",
+      "destination": "/boutique/index.html"
     }
   ]
 }
