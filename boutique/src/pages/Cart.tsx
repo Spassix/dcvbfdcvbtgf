@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../contexts/CartContext";
-import { CartService, PaymentMethod, CartSettings } from "@plug-certifie/shared";
+import { CartSettings } from "@plug-certifie/shared";
 
 type CheckoutStep = 1 | 2 | 3 | 4;
 
